@@ -1,0 +1,12 @@
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/bin/Debug/net9.0/MiniMarketplace.Infrastructure.deps.json
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/bin/Debug/net9.0/MiniMarketplace.Infrastructure.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/bin/Debug/net9.0/MiniMarketplace.Infrastructure.pdb
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.AssemblyInfoInputs.cache
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.AssemblyInfo.cs
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.sourcelink.json
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/refint/MiniMarketplace.Infrastructure.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/MiniMarketplace.Infrastructure.pdb
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Infrastructure/obj/Debug/net9.0/ref/MiniMarketplace.Infrastructure.dll

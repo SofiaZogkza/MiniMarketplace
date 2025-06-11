@@ -1,6 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace", "MiniMarketplace\MiniMarketplace.csproj", "{13E7AEB9-B84A-48E9-B18C-53061D953FAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Api", "MiniMarketplace.Api\MiniMarketplace.Api.csproj", "{13E7AEB9-B84A-48E9-B18C-53061D953FAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Domain.Models", "MiniMarketplace.Domain.Models\MiniMarketplace.Domain.Models.csproj", "{5CE29721-30CA-48D2-87AB-671EC0AEC568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Persistence", "MiniMarketplace.Persistence\MiniMarketplace.Persistence.csproj", "{E3AA9FB8-FAD9-4BFA-AF78-33014A608AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Infrastructure", "MiniMarketplace.Infrastructure\MiniMarketplace.Infrastructure.csproj", "{CE385331-056A-4AF0-B192-AFEB685B28E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Tests", "MiniMarketplace.Tests\MiniMarketplace.Tests.csproj", "{5EBCEAB6-9CDF-47BB-82EC-221DAC8B1EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMarketplace.Application", "MiniMarketplace.Application\MiniMarketplace.Application.csproj", "{3E02ECC5-6535-49F7-BFB9-2F5E5BB02A19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +22,25 @@ Global
 		{13E7AEB9-B84A-48E9-B18C-53061D953FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13E7AEB9-B84A-48E9-B18C-53061D953FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13E7AEB9-B84A-48E9-B18C-53061D953FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE29721-30CA-48D2-87AB-671EC0AEC568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE29721-30CA-48D2-87AB-671EC0AEC568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE29721-30CA-48D2-87AB-671EC0AEC568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE29721-30CA-48D2-87AB-671EC0AEC568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AA9FB8-FAD9-4BFA-AF78-33014A608AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AA9FB8-FAD9-4BFA-AF78-33014A608AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AA9FB8-FAD9-4BFA-AF78-33014A608AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AA9FB8-FAD9-4BFA-AF78-33014A608AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE385331-056A-4AF0-B192-AFEB685B28E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE385331-056A-4AF0-B192-AFEB685B28E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE385331-056A-4AF0-B192-AFEB685B28E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE385331-056A-4AF0-B192-AFEB685B28E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EBCEAB6-9CDF-47BB-82EC-221DAC8B1EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EBCEAB6-9CDF-47BB-82EC-221DAC8B1EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EBCEAB6-9CDF-47BB-82EC-221DAC8B1EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EBCEAB6-9CDF-47BB-82EC-221DAC8B1EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E02ECC5-6535-49F7-BFB9-2F5E5BB02A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E02ECC5-6535-49F7-BFB9-2F5E5BB02A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E02ECC5-6535-49F7-BFB9-2F5E5BB02A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E02ECC5-6535-49F7-BFB9-2F5E5BB02A19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

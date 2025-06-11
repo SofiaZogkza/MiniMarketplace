@@ -1,0 +1,12 @@
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/bin/Debug/net9.0/MiniMarketplace.Domain.Models.deps.json
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/bin/Debug/net9.0/MiniMarketplace.Domain.Models.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/bin/Debug/net9.0/MiniMarketplace.Domain.Models.pdb
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.AssemblyInfoInputs.cache
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.AssemblyInfo.cs
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.csproj.CoreCompileInputs.cache
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.sourcelink.json
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/refint/MiniMarketplace.Domain.Models.dll
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/MiniMarketplace.Domain.Models.pdb
+/Users/sofiazogkza/repos/MiniMarketplace/MiniMarketplace.Domain.Models/obj/Debug/net9.0/ref/MiniMarketplace.Domain.Models.dll
