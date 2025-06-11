@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniMarketplace.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9c1d14ff576103ddefb467f964ba088656b6556")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c61bd311a2c2ce9bcaf3c3efac20fcf534f57f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniMarketplace.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniMarketplace.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
