@@ -1,11 +1,11 @@
-🏪 MiniMarketplace - Clean Architecture E-Commerce Solution
+# 🏪 MiniMarketplace - Clean Architecture E-Commerce Solution
 
-📌 Overview
+## 📌 Overview
 
 MiniMarketplace is a robust e-commerce platform following Clean Architecture principles with clear separation of concerns. This solution demonstrates modern .NET development practices including domain-driven design, repository pattern, and dependency inversion.
 
-Project Structure
-
+## Project Structure
+```
 MiniMarketplace
 ├── 📁 Api/                          # Presentation Layer
 │   ├── Controllers/                # API Endpoints
@@ -33,3 +33,4 @@ MiniMarketplace
 │   └── Services/                   # External service adapters
 │
 └── 📄 MiniMarketplace.sln          # Solution file
+```
