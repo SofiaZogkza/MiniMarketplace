@@ -1,0 +1,63 @@
+# Build output folders
+**/bin/
+**/obj/
+
+# Rider IDE files
+.idea/
+*.iml
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+ 
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+
+# Packages folder
+packages/
+
+# Resharper files
+_ReSharper*/
+
+# DotCover files
+*.dotCover
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# IIS Express
+/.vs/
+/iisexpress/
+
+# npm logs
+npm-debug.log*
+
+# Mac system files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Test result files
+TestResults/
+*.trx
+
+# Publish folder
+publish/
+
+# Others
+*.pidb
+*.userprefs
+*.class
+*.cache
+*.project
