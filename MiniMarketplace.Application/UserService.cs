@@ -10,9 +10,10 @@ public class UserService : IUserService
     {
         _userRepository = userRepository;
     }
-    public Task<List<UserResponse>> GetAllUsersAsync()
+    public async Task<List<UserResponse>> GetAllUsersAsync()
     {
-        throw new NotImplementedException();
+        var users = await _userRepository.GetAllAsync();
+        return users;
     }
 
     public Task<UserResponse> FindAsync(string userId)
