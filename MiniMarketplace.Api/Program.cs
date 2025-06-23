@@ -1,16 +1,25 @@
+using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using MiniMarketplace.Application;
 using MiniMarketplace.Persistence.Data;
 using MiniMarketplace.Persistence.Repositories;
 
+Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Register your DbContext
+var connectionString =
+    $"Host={Environment.GetEnvironmentVariable("POSTGRES_HOST")};" +
+    $"Port={Environment.GetEnvironmentVariable("POSTGRES_PORT")};" +
+    $"Database={Environment.GetEnvironmentVariable("POSTGRES_DB")};" +
+    $"Username={Environment.GetEnvironmentVariable("POSTGRES_USER")};" +
+    $"Password={Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")}";
+
 builder.Services.AddDbContext<MarketplaceDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
+
 
 // Register your services
 builder.Services.AddScoped<IUserService, UserService>();
@@ -28,7 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 
 var summaries = new[]
 {

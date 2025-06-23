@@ -1,3 +1,4 @@
+using MiniMarketplace.Application.Mappers;
 using MiniMarketplace.Domain.Models.Dtos;
 
 namespace MiniMarketplace.Application;
@@ -10,9 +11,12 @@ public class UserService : IUserService
     {
         _userRepository = userRepository;
     }
-    public Task<List<UserResponse>> GetAllUsersAsync()
+
+    public async Task<List<UserResponse>> GetAllUsersAsync()
     {
-        throw new NotImplementedException();
+        var users = await _userRepository.GetAllAsync();
+        var response = users.Select(UserMapper.ToResponse).ToList();
+        return response;
     }
 
     public Task<UserResponse> FindAsync(string userId)

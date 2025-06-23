@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using MiniMarketplace.Application;
+using MiniMarketplace.Domain.Models;
+using MiniMarketplace.Domain.Models.Dtos;
 using MiniMarketplace.Persistence.Data;
+using MiniMarketplace.Persistence.Entities;
+using MiniMarketplace.Persistence.Mappers;
 
 namespace MiniMarketplace.Persistence.Repositories;
 
@@ -13,6 +17,14 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
+    public async Task<List<User>> GetAllAsync()
+    {
+        var entities = await _context.Users.ToListAsync();
+        var userDomainModel = UserEntityMapper.ToDomain;
+        var result = entities.Select(userDomainModel).ToList();
+        return result;
+    }
+    
     public async Task<(bool EmailExists, bool UsernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
     {
         var users = await _context.Users
@@ -25,6 +37,4 @@ public class UserRepository : IUserRepository
 
         return (emailExists, usernameExists);
     }
-
-    // Add other methods to create, get user, etc.
 }
