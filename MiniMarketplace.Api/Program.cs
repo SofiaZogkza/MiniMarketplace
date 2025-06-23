@@ -20,7 +20,6 @@ var connectionString =
 builder.Services.AddDbContext<MarketplaceDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-
 // Register your services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -34,7 +33,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
