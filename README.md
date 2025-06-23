@@ -1,4 +1,4 @@
-# 🏪 MiniMarketplace - Clean Architecture E-Commerce Solution
+# 🏪 MiniMarketplace - E-Commerce Solution
 
 ## 📌 Overview
 
