@@ -15,22 +15,24 @@ MiniMarketplace
 ├── 📁 Application/                  # Application Layer
 │   ├── Interfaces/                 # Repository & service contracts
 │   ├── Services/                   # Use case implementations
-│   ├── DTOs/                       # Data transfer objects
 │   └── Mappers/                    # Object mapping profiles
 │
 ├── 📁 Domain/                       # Domain Layer
-│   ├── Entities/                   # Aggregate roots
 │   ├── ValueObjects/               # Domain value objects
+│   ├── DTOs/                       # Data transfer objects
 │   └── Exceptions/                 # Domain-specific exceptions
 │
 ├── 📁 Persistence/                  # Data Access Layer
 │   ├── Data/                       # DbContext configuration
-│   ├── Repositories/               # Repository implementations
+│   ├── Entities/                   # Aggregate roots
+│   ├── Mappers/                    # Persistence mapping logic
 │   ├── Migrations/                 # EF Core migrations
-│   └── Mappers/                    # Persistence mapping logic
+│   └── Repositories/               # Repository implementations
 │
 ├── 📁 Infrastructure/               # Cross-cutting Concerns
 │   └── Services/                   # External service adapters
+│
+├── 📁 Tests/                       # Unit Tests, Integration Tests
 │
 └── 📄 MiniMarketplace.sln          # Solution file
 ```
