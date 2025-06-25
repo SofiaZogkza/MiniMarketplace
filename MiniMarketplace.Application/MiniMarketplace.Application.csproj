@@ -10,4 +10,9 @@
       <ProjectReference Include="..\MiniMarketplace.Domain.Models\MiniMarketplace.Domain.Models.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
+    </ItemGroup>
+
 </Project>

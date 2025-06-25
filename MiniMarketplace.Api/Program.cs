@@ -1,6 +1,9 @@
 using DotNetEnv;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using MiniMarketplace.Application;
+using MiniMarketplace.Application.Validators;
 using MiniMarketplace.Persistence.Data;
 using MiniMarketplace.Persistence.Repositories;
 
@@ -9,6 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<UserCreateRequestValidator>();
+
 
 var connectionString =
     $"Host={Environment.GetEnvironmentVariable("POSTGRES_HOST")};" +
