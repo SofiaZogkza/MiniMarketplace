@@ -56,7 +56,6 @@ public class UserController : ControllerBase
         
         var response = await _userService.CreateUserAsync(request);
 
-        //return Ok(response);
         return CreatedAtAction(nameof(GetUserById), new { id = response.Id }, response);
     }
 }

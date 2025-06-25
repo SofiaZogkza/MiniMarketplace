@@ -14,8 +14,8 @@ public static class UserEntityMapper
             Email = user.Email,
             FirstName = user.FirstName,
             LastName = user.LastName,
-            PasswordHash = user.PasswordHash
-        };
+            PasswordHash = user.PasswordHash,
+            CreatedAt = DateTime.UtcNow        };
     }
 
     public static User ToDomain(UserEntity entity)
@@ -27,7 +27,8 @@ public static class UserEntityMapper
             Email = entity.Email,
             FirstName = entity.FirstName,
             LastName = entity.LastName,
-            PasswordHash = entity.PasswordHash
+            PasswordHash = entity.PasswordHash,
+            CreatedAt = entity.CreatedAt
         };
     }
 }
