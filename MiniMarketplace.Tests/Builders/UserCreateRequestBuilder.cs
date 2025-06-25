@@ -77,7 +77,6 @@ public sealed class UserCreateRequestBuilder
         PasswordHash = _password,
         Email = _email,
         FirstName = _firstname,
-        LastName = _lastname,
-        CreatedAt = _createdAt,
+        LastName = _lastname
     };
 }

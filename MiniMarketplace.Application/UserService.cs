@@ -6,16 +6,18 @@ namespace MiniMarketplace.Application;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IUserMapper _userMapper;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(IUserRepository userRepository, IUserMapper userMapper)
     {
         _userRepository = userRepository;
+        _userMapper = userMapper;
     }
 
     public async Task<List<UserResponse>> GetAllUsersAsync()
     {
         var users = await _userRepository.GetAllAsync();
-        var response = users.Select(UserMapper.ToResponse).ToList();
+        var response = users.Select(_userMapper.ToResponse).ToList();
         return response;
     }
 
@@ -24,9 +26,15 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<UserResponse> CreateUserAsync(UserCreateRequest request)
+    public async Task<UserResponse> CreateUserAsync(UserCreateRequest request)
     {
-        throw new NotImplementedException();
+        var user = _userMapper.ToDomain(request);
+        
+        var userCreated = await _userRepository.CreateUserAsync(user);
+        
+        var response = _userMapper.ToResponse(userCreated);
+        
+        return response;
     }
 
     public async Task<(bool emailExists, bool usernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
