@@ -3,6 +3,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using MiniMarketplace.Application;
+using MiniMarketplace.Application.Mappers;
 using MiniMarketplace.Application.Validators;
 using MiniMarketplace.Persistence.Data;
 using MiniMarketplace.Persistence.Repositories;
@@ -30,6 +31,7 @@ builder.Services.AddDbContext<MarketplaceDbContext>(options =>
 // Register your services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserMapper, UserMapper>();
 
 // OpenAPI/Swagger configuration
 builder.Services.AddEndpointsApiExplorer();

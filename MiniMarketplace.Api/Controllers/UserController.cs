@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using MiniMarketplace.Api.Contracts;
 using MiniMarketplace.Application;
 using MiniMarketplace.Domain.Models.Dtos;
+using MiniMarketplace.Domain.Models.Errors;
 
 namespace MiniMarketplace.Api.Controllers;
 
@@ -44,19 +46,26 @@ public class UserController : ControllerBase
     {
         if (request is null)
         {
-            return BadRequest();
+            return BadRequest(new ErrorResponse
+            {
+                Code = ErrorCodes.InvalidRequest,
+                Message = ErrorMessages.InvalidRequest
+            });
         }
         
         var (emailExists, usernameExists) = await _userService.CheckEmailAndUsernameExistAsync(request.Email, request.Username);
 
         if (emailExists || usernameExists)
         {
-            return BadRequest("Registration failed. Email or username already exists.");
+            return BadRequest(new ErrorResponse
+            {
+                Code = ErrorCodes.RegistrationFailed,
+                Message = ErrorMessages.RegistrationFailed
+            });
         }
-        
+
         var response = await _userService.CreateUserAsync(request);
 
-        //return Ok(response);
         return CreatedAtAction(nameof(GetUserById), new { id = response.Id }, response);
     }
 }
