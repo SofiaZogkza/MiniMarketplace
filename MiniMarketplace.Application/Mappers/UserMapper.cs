@@ -20,7 +20,7 @@ public class UserMapper : IUserMapper
     {
         return new UserResponse
         {
-            Id = user.Id,
+            Id = user.Id.ToString(),
             Username = user.Username,
             Email = user.Email,
             FirstName = user.FirstName,

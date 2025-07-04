@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 public sealed record UserResponse
 {
     [JsonPropertyName("id")]
-    public Guid Id { get; init; }
+    public string Id { get; init; }
     [JsonPropertyName("username")] 
     public string Username { get; init; }
     [JsonPropertyName("email")]
