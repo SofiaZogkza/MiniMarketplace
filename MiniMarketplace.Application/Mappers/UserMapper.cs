@@ -2,9 +2,9 @@ using MiniMarketplace.Domain.Models.Dtos;
 
 namespace MiniMarketplace.Application.Mappers;
 
-public static class UserMapper
+public class UserMapper : IUserMapper
 {
-    public static Domain.Models.User ToDomain(UserCreateRequest request)
+    public Domain.Models.User ToDomain(UserCreateRequest request)
     {
         return new Domain.Models.User
         {
@@ -16,11 +16,11 @@ public static class UserMapper
         };
     }
 
-    public static UserResponse ToResponse(Domain.Models.User user)
+    public UserResponse ToResponse(Domain.Models.User user)
     {
         return new UserResponse
         {
-            Id = user.Id,
+            Id = user.Id.ToString(),
             Username = user.Username,
             Email = user.Email,
             FirstName = user.FirstName,

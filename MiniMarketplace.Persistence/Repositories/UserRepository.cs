@@ -24,7 +24,27 @@ public class UserRepository : IUserRepository
         var result = entities.Select(userDomainModel).ToList();
         return result;
     }
-    
+
+
+    public async Task<User> CreateUserAsync(User user)
+    {
+        await using var transaction = await _context.Database.BeginTransactionAsync();
+        try
+        {
+            var entity = UserEntityMapper.ToEntity(user);
+            var newUser = await _context.Users.AddAsync(entity);
+        
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+        
+            return UserEntityMapper.ToDomain(newUser.Entity);
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            throw;
+        }
+    }
     public async Task<(bool EmailExists, bool UsernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
     {
         var users = await _context.Users
