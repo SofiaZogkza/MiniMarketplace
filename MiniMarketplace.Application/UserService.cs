@@ -21,9 +21,11 @@ public class UserService : IUserService
         return response;
     }
 
-    public Task<UserResponse> FindAsync(string userId)
+    public async Task<UserResponse> FindAsync(Guid userId)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.GetUserByIdAsync(userId);
+        
+        return user == null ? null : _userMapper.ToResponse(user);
     }
 
     public async Task<UserResponse> CreateUserAsync(UserCreateRequest request)
