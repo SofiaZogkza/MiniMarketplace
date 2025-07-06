@@ -24,8 +24,7 @@ public class UserRepository : IUserRepository
         var result = entities.Select(userDomainModel).ToList();
         return result;
     }
-
-
+    
     public async Task<User> CreateUserAsync(User user)
     {
         await using var transaction = await _context.Database.BeginTransactionAsync();
@@ -45,6 +44,14 @@ public class UserRepository : IUserRepository
             throw;
         }
     }
+
+    public async Task<User?> GetUserByIdAsync(Guid id)
+    {
+        var entity = await _context.Users.FindAsync(id);
+
+        return entity is null ? null : UserEntityMapper.ToDomain(entity);
+    }
+
     public async Task<(bool EmailExists, bool UsernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
     {
         var users = await _context.Users

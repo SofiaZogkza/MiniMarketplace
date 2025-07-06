@@ -2,6 +2,8 @@ namespace MiniMarketplace.Domain.Models.Errors;
 
 public static class ErrorMessages
 {
+    public const string InvalidGuid = "Invalid Guid";
     public const string InvalidRequest = "Request payload is invalid.";
     public const string RegistrationFailed = "Registration failed. Please check your input and try again.";
+    public const string NotFound = "Not Found";
 }
