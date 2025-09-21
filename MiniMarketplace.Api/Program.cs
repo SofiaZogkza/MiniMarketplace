@@ -16,6 +16,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<UserCreateRequestValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<UserUpdateRequestValidator>();
 
 
 var connectionString =

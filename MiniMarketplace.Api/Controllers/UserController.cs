@@ -71,6 +71,32 @@ public class UserController : ControllerBase
         return CreatedAtAction(nameof(GetUserById), new { id = response.Id }, response);
     }
     
+    [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<UserResponse>> Update(string id, UserUpdateRequest request)
+    {
+        if (!IsValidGuid(id, out var userId))
+        {
+            return BadRequest(new ErrorResponse { Code = ErrorCodes.InvalidRequest, Message = ErrorMessages.InvalidGuid });
+        }
+        
+        if (userId == Guid.Empty || request is null)
+        {
+            return BadRequest(new ErrorResponse { Code = ErrorCodes.InvalidRequest, Message = ErrorMessages.InvalidRequest });
+        }
+        
+        var response = await _userService.UpdateUserAsync(userId, request);
+        if (response == null)
+        {
+            return NotFound(new ErrorResponse { Code = ErrorCodes.UserNotFound, Message = ErrorMessages.NotFound });
+        }
+        
+        return NoContent();
+    }
+    
     public static bool IsValidGuid(string value, out Guid guid) =>
         Guid.TryParse(value, out guid) && guid != Guid.Empty;
 }

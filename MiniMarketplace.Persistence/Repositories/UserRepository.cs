@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MiniMarketplace.Application;
 using MiniMarketplace.Domain.Models;
-using MiniMarketplace.Domain.Models.Dtos;
 using MiniMarketplace.Persistence.Data;
 using MiniMarketplace.Persistence.Entities;
 using MiniMarketplace.Persistence.Mappers;
@@ -51,6 +50,15 @@ public class UserRepository : IUserRepository
 
         return entity is null ? null : UserEntityMapper.ToDomain(entity);
     }
+    
+    public async Task<bool> UpdateUserAsync(Guid id, User request)
+    {
+        var existingUser = await _context.Users.FindAsync(id);
+        if (existingUser == null) return false;
+        
+        ApplyUpdateToUser(existingUser, request);
+        return await _context.SaveChangesAsync() > 0;
+    }
 
     public async Task<(bool EmailExists, bool UsernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
     {
@@ -63,5 +71,23 @@ public class UserRepository : IUserRepository
         bool usernameExists = users.Any(u => u.Username == username);
 
         return (emailExists, usernameExists);
+    }
+    
+    private void ApplyUpdateToUser(UserEntity existingUser, User request)
+    {
+        if (request.Username != null)
+            existingUser.Username = request.Username;
+    
+        if (request.Email != null)
+            existingUser.Email = request.Email;
+    
+        if (request.FirstName != null)
+            existingUser.FirstName = request.FirstName;
+    
+        if (request.LastName != null)
+            existingUser.LastName = request.LastName;
+    
+        if (request.PasswordHash != null)
+            existingUser.PasswordHash = request.PasswordHash;
     }
 }

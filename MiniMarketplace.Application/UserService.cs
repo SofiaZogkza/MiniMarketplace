@@ -39,6 +39,15 @@ public class UserService : IUserService
         return response;
     }
 
+    public async Task<bool> UpdateUserAsync(Guid userId, UserUpdateRequest request)
+    {
+        var user = _userMapper.ToDomain(request);
+
+        var userUpdated = await _userRepository.UpdateUserAsync(userId, user);
+        
+        return userUpdated;
+    }
+
     public async Task<(bool emailExists, bool usernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
     {
         return await _userRepository.CheckEmailAndUsernameExistAsync(email, username);

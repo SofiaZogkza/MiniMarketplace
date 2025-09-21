@@ -7,6 +7,7 @@ public interface IUserService
     Task<List<UserResponse>> GetAllUsersAsync();
     Task<UserResponse> FindAsync(Guid userId);
     Task<UserResponse> CreateUserAsync(UserCreateRequest request);
+    Task<bool> UpdateUserAsync(Guid userId, UserUpdateRequest request);
     Task<(bool emailExists, bool usernameExists)> CheckEmailAndUsernameExistAsync(string email, string username);
 
 }
