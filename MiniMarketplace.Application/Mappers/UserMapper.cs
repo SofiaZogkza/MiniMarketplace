@@ -1,3 +1,4 @@
+using MiniMarketplace.Domain.Models;
 using MiniMarketplace.Domain.Models.Dtos;
 
 namespace MiniMarketplace.Application.Mappers;
@@ -7,6 +8,18 @@ public class UserMapper : IUserMapper
     public Domain.Models.User ToDomain(UserCreateRequest request)
     {
         return new Domain.Models.User
+        {
+            Username = request.Username,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            Email = request.Email,
+            PasswordHash = request.PasswordHash
+        };
+    }
+
+    public User ToDomain(UserUpdateRequest request)
+    {
+        return new User
         {
             Username = request.Username,
             FirstName = request.FirstName,

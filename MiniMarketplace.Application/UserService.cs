@@ -21,9 +21,11 @@ public class UserService : IUserService
         return response;
     }
 
-    public Task<UserResponse> FindAsync(string userId)
+    public async Task<UserResponse> FindAsync(Guid userId)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.GetUserByIdAsync(userId);
+        
+        return user == null ? null : _userMapper.ToResponse(user);
     }
 
     public async Task<UserResponse> CreateUserAsync(UserCreateRequest request)
@@ -35,6 +37,15 @@ public class UserService : IUserService
         var response = _userMapper.ToResponse(userCreated);
         
         return response;
+    }
+
+    public async Task<bool> UpdateUserAsync(Guid userId, UserUpdateRequest request)
+    {
+        var user = _userMapper.ToDomain(request);
+
+        var userUpdated = await _userRepository.UpdateUserAsync(userId, user);
+        
+        return userUpdated;
     }
 
     public async Task<(bool emailExists, bool usernameExists)> CheckEmailAndUsernameExistAsync(string email, string username)
