@@ -96,6 +96,18 @@ public class UserController : ControllerBase
         
         return NoContent();
     }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<UserResponse>> Delete(string id)
+    {
+        if (!IsValidGuid(id, out var userId))
+        {
+            return BadRequest(new ErrorResponse
+                { Code = ErrorCodes.InvalidRequest, Message = ErrorMessages.InvalidGuid });
+        }
+
+        return NoContent();
+    }
     
     public static bool IsValidGuid(string value, out Guid guid) =>
         Guid.TryParse(value, out guid) && guid != Guid.Empty;
