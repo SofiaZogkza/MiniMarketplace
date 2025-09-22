@@ -15,21 +15,10 @@ public sealed class UserUpdateRequestBuilder
         _username = username;
         return this;
     }
-    public UserUpdateRequestBuilder WithInvalidUsername(string invalidUsername)
-    {
-        _username = "a"; // Violates min length
-        return this;
-    }
     
      public UserUpdateRequestBuilder WithPassword(string password)
     {
         _password = password;
-        return this;
-    }
-    
-    public UserUpdateRequestBuilder WithWeakPassword()
-    {
-        _password = "123"; // Violates min length
         return this;
     }
 
@@ -38,34 +27,16 @@ public sealed class UserUpdateRequestBuilder
         _email = email;
         return this;
     }
-    
-    public UserUpdateRequestBuilder WithInvalidEmail()
-    {
-        _email = "not-an-email";
-        return this;
-    }
 
-    public UserUpdateRequestBuilder WithFirstName(string firstname)
+    public UserUpdateRequestBuilder WithFirstname(string firstname)
     {
         _firstname = firstname;
         return this;
     }
-    
-    public UserUpdateRequestBuilder WithEmptyFirstName()
-    {
-        _firstname = string.Empty;
-        return this;
-    }
 
-    public UserUpdateRequestBuilder WithLastName(string lastname)
+    public UserUpdateRequestBuilder WithLastname(string lastname)
     {
         _lastname = lastname;
-        return this;
-    }
-    
-    public UserUpdateRequestBuilder WithEmptyLastName()
-    {
-        _lastname = string.Empty;
         return this;
     }
 

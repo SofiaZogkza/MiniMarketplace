@@ -21,7 +21,8 @@ public class UserUpdateRequestValidator : AbstractValidator<UserUpdateRequest>
             .When(x => !string.IsNullOrEmpty(x.LastName));
 
         RuleFor(x => x.Email)
-            .EmailAddress().WithMessage(ValidationMessages.Invalid)
+            .Matches(@"^[^@\s]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$") // No spaces, must have domain and TLD
+            .WithMessage(ValidationMessages.Invalid)
             .When(x => !string.IsNullOrEmpty(x.Email));
 
         RuleFor(x => x.PasswordHash)

@@ -22,7 +22,8 @@ public class UserCreateRequestValidator : AbstractValidator<UserCreateRequest>
         
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage(ValidationMessages.Required)
-            .EmailAddress().WithMessage(ValidationMessages.Invalid);
+            .MinimumLength(6).WithMessage(ValidationMessages.MinLength6)
+            .Matches(@"^[^@\s]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$").WithMessage(ValidationMessages.Invalid);
         
         RuleFor(x => x.PasswordHash)
             .NotEmpty().WithMessage(ValidationMessages.Required)
